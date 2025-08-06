@@ -13,20 +13,23 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { general,help } from "./nav-links"
-import { DropdownMenuDemo } from "./dropdown-profile"
+import { ProfileDropdownMenu } from "../profile/dropdown-profile"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { BadgeCheckIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
+import {ProfileSidebar} from "../profile/profile-card"
 
 
 export function AppSidebar() {
   return (
     <Sidebar variant="inset">
       <SidebarHeader>
-        <div className="bg-red-400 w-full h-14 rounded-xl flex items-center justify-center">
-          <Link className="w-full flex justify-center" href={'/'}><h1 className="text-2xl font-bold">Test</h1></Link>
+        <div className=" w-full h-14 rounded-xl flex items-center justify-center">
+          <Link className="w-full flex justify-center" href={'/'}><h1 className="text-2xl font-bold">Logo</h1></Link>
         </div>
       </SidebarHeader>
+      <Separator />
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>General</SidebarGroupLabel>
@@ -63,23 +66,9 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter className="border rounded-2xl py-0">
-        <div className="w-full h-14 rounded-xl flex items-center justify-between px-2">
-          <div className="w-full h-max flex items-center gap-2">
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-sm">John DOE</p>
-              <Badge className="h-4 min-w-5 rounded-full px-1 scale-95">
-                <BadgeCheckIcon />
-                Vérifié
-              </Badge>
-            </div>
-          </div>
-          <DropdownMenuDemo />
-        </div>
+      <Separator />
+      <SidebarFooter className="rounded-2xl py-0">
+        <ProfileSidebar />
       </SidebarFooter>
     </Sidebar>
   )

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import {roboto} from '@/lib/fonts'
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme/theme-provider"
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,11 +15,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${roboto.className} antialiased`}
       >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

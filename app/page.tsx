@@ -9,12 +9,14 @@ export default function Home() {
         <h1 className={`text-8xl sm:text-9xl text-white`}>Portail</h1>
         <form className="w-full h-1/3 flex justify-center items-start p-4">
           <div className="w-full lg:w-2/3 h-1/2 flex items-center justify-evenly">
-            <Link href={'./signin'}>
+            {/* Mettre ./signin */}
+            <Link href={'./dashboard'}>
               <Button size={'lg'} className={`border-accent border`}>
                 Se connecter
               </Button>
             </Link>
-            <Link href={'./signup'}>
+            {/* Mettre ./signup */}
+            <Link href={'./dashboard'}>
               <Button size={'lg'} variant={'outline'}>
                 S'inscrire
               </Button>
