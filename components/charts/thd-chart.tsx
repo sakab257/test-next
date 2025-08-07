@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { Line, LineChart, Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import {sndChartData, sndChartConfig} from '@/lib/fake-data'
 
 import {
@@ -36,8 +36,8 @@ const TIME_RANGES = {
 } as const
 
 const DEVICES = {
-  mobile: "Mobile",
-  desktop: "PC"
+  dollar: "Dollar",
+  euro: "Euro"
 } as const
 
 const REFERENCE_DATE = "2024-06-30"
@@ -46,37 +46,37 @@ type TimeRange = keyof typeof TIME_RANGES
 type Device = keyof typeof DEVICES
 
 export function BarChartInteractive() {
-  const [timeRange, setTimeRange] = React.useState<TimeRange>("90d")
-  const [device, setDevice] = React.useState<Device>('mobile')
+  // const [timeRange, setTimeRange] = React.useState<TimeRange>("90d")
+  const [device, setDevice] = React.useState<Device>('dollar')
 
   const filteredData = React.useMemo(() => {
-    const filterByTimeRange = (data: typeof sndChartData) => {
-      const referenceDate = new Date(REFERENCE_DATE)
-      const daysToSubtract = TIME_RANGES[timeRange].days
-      const startDate = new Date(referenceDate)
-      startDate.setDate(startDate.getDate() - daysToSubtract)
+    // const filterByTimeRange = (data: typeof sndChartData) => {
+    //   const referenceDate = new Date(REFERENCE_DATE)
+    //   const daysToSubtract = TIME_RANGES[timeRange].days
+    //   const startDate = new Date(referenceDate)
+    //   startDate.setDate(startDate.getDate() - daysToSubtract)
       
-      return data.filter(item => new Date(item.date) >= startDate)
-    }
+    //   return data.filter(item => new Date(item.date) >= startDate)
+    // }
 
     const transformForDevice = (data: typeof sndChartData) => {
       return data.map(item => ({
         date: item.date,
         [device]: item[device],
-        total: item.desktop + item.mobile
+        total: item.dollar + item.euro
       }))
     }
 
-    return transformForDevice(filterByTimeRange(sndChartData))
-  }, [timeRange, device])
+    return transformForDevice(sndChartData) // Mettre filterByTimeRange() si on veut mettre 
+  }, [device])
 
   return (
-    <Card className="pt-0 w-2/3 h-max m-5">
+    <Card className="pt-0 w-full h-max m-5">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
-          <CardTitle>Visiteurs</CardTitle>
+          <CardTitle>Taux de change</CardTitle>
           <CardDescription>
-            Total des visiteurs ces 3 derniers mois
+            Taux de change USD/EUR sur ces 3 derniers mois
           </CardDescription>
         </div>
         <Select value={device} onValueChange={(value) => setDevice(value as Device)}>
@@ -98,7 +98,7 @@ export function BarChartInteractive() {
             ))}
           </SelectContent>
         </Select>
-        <Select value={timeRange} onValueChange={(value) => setTimeRange(value as TimeRange)}>
+        {/* <Select value={timeRange} onValueChange={(value) => setTimeRange(value as TimeRange)}>
           <SelectTrigger
             className="hidden w-[160px] rounded-lg sm:ml-auto sm:flex cursor-pointer"
             aria-label="Sélectionner une période"
@@ -116,16 +116,16 @@ export function BarChartInteractive() {
               </SelectItem>
             ))}
           </SelectContent>
-        </Select>
+        </Select> */}
       </CardHeader>
       <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
         <ChartContainer
           config={sndChartConfig}
           className="aspect-auto h-[250px] w-full"
         >
-          <BarChart data={filteredData}>
+          <LineChart data={filteredData}>
             <defs>
-              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillDollar" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
                   stopColor="var(--color-desktop)"
@@ -137,7 +137,7 @@ export function BarChartInteractive() {
                   stopOpacity={0.1}
                 />
               </linearGradient>
-              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillEuro" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
                   stopColor="var(--color-mobile)"
@@ -165,6 +165,13 @@ export function BarChartInteractive() {
                 })
               }}
             />
+            <YAxis
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              domain={['dataMin - 0.005', 'dataMax + 0.005']}
+              tickFormatter={(value) => value.toFixed(4)}
+            />
             <ChartTooltip
               cursor={false}
               content={
@@ -179,23 +186,26 @@ export function BarChartInteractive() {
                 />
               }
             />
-            {device === 'mobile' ? (
-              <Bar
-                dataKey="mobile"
+            {device === 'dollar' ? (
+              <Line
+                dataKey="dollar"
                 type="natural"
-                fill="url(#fillMobile)"
-                stroke="var(--color-mobile)"
+                fill="#fff"
+                stroke="var(--color-dollar)"
+                strokeWidth={2}
+                dot={false}
               />
             ) : (
-              <Bar
-                dataKey="desktop"
+              <Line
+                dataKey="euro"
                 type="natural"
-                fill="url(#fillDesktop)"
-                stroke="var(--color-desktop)"
+                stroke="var(--color-euro)"
+                strokeWidth={2}
+                dot={false}
               />
             )}
             <ChartLegend content={<ChartLegendContent />} />
-          </BarChart>
+          </LineChart>
         </ChartContainer>
       </CardContent>
     </Card>

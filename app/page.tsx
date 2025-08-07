@@ -1,12 +1,16 @@
+import { ModeToggle } from "@/components/theme/mode-toggle";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
   return (
 
-    <div className="h-screen w-full flex flex-1 items-center justify-center flex-col bg-accent-foreground">
+    <div className="h-screen w-full flex flex-1 items-center justify-center flex-col bg-accent">
+      <div className="absolute top-2 right-2">
+        <ModeToggle />
+      </div>
       <div className="z-10 w-full sm:w-1/2 h-1/2 flex flex-col items-center justify-center">
-        <h1 className={`text-8xl sm:text-9xl text-white`}>Portail</h1>
+        <h1 className={`text-8xl sm:text-9xl text-primary`}>Portail</h1>
         <form className="w-full h-1/3 flex justify-center items-start p-4">
           <div className="w-full lg:w-2/3 h-1/2 flex items-center justify-evenly">
             {/* Mettre ./signin */}
