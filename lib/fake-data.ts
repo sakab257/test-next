@@ -1,4 +1,6 @@
-import { ChartConfig } from "@/components/ui/chart"
+import { ChartConfig } from "@/components/ui/chart";
+
+import {TrendingUp} from 'lucide-react';
 
 export const chartConfig = {
   desktop: {
@@ -26,3 +28,28 @@ export const chartData = [
   { month: "Nov", desktop: 284, mobile: 140 },
   { month: "Dec", desktop: 214, mobile: 100 },
 ]
+
+export const totalAssets ={
+    title:'Portefeuille',
+    asset:'32.866,92',
+    devise:'€',
+    badge:{
+      icon:TrendingUp,
+      data:'+ 2,74%'
+    }
+};
+
+export const assets =[
+{
+  title:'Bitcoin',
+  asset:'12.866,76',
+  devise:'BTC',
+  badge:{
+      icon:TrendingUp,
+      data:'+ 3,86%'
+    }
+
+}
+
+
+];
