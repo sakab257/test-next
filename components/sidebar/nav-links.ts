@@ -12,7 +12,7 @@ import { Grid2x2,
 export const general = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/dashboard",
     icon: Grid2x2,
   },
   {
