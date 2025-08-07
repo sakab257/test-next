@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <AppSidebar/>
       <SidebarInset className="overflow-hidden">
         <Header />
-        <main>
+        <main className="h-full">
           {children}
         </main>
       </SidebarInset>

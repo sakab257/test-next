@@ -12,7 +12,7 @@ const Header = () => {
       <div className='w-max mr-2 relative flex items-center'>
         <div className='flex items-center'>
           <Search className='absolute top-1/2 left-2 -translate-y-1/2 text-muted-foreground' size={20} />
-          <Input placeholder='Rechercher' className='pl-9 rounded-lg bg-accent lg:w-lg transition-all' />
+          <Input placeholder='Rechercher' className='pl-9 rounded-lg bg-accent lg:w-lg transitio-all' />
         </div>
         <ProfileHeader />
         <ModeToggle />

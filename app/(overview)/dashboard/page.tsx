@@ -5,9 +5,9 @@ import { BarChartInteractive } from '@/components/charts/thd-chart'
 
 const Dashboard = () => {
   return (
-    <>
+    <div className='flex h-full w-full'>
       <BarChartInteractive />
-    </>
+    </div>
   )
 }
 

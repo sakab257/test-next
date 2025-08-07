@@ -23,7 +23,7 @@ import {ProfileSidebar} from "../profile/profile-card"
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset">
+    <Sidebar variant="floating">
       <SidebarHeader>
         <div className=" w-full h-14 rounded-xl flex items-center justify-center">
           <Link className="w-full flex justify-center" href={'/'}><h1 className="text-2xl font-bold">Logo</h1></Link>
