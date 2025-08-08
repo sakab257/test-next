@@ -75,7 +75,7 @@ export function ProfileDropdownHeader() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size={'icon'} className="hover:bg-transparent hover:text-transparent focus-visible:ring-[0px]">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src="/avatar.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </Button>

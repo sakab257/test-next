@@ -9,7 +9,7 @@ export const ProfileSidebar = () => {
     <div className="w-full h-14 rounded-xl flex items-center justify-between px-2">
       <div className="w-full h-max flex items-center gap-2">
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarImage src="/avatar.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className="flex flex-col justify-center items-center">

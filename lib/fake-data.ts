@@ -1,52 +1,85 @@
 import { ChartConfig } from "@/components/ui/chart";
 
-import {TrendingUp} from 'lucide-react';
+import {TrendingUp, TrendingDown } from 'lucide-react';
 
 export const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "#2563eb",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+  placement: {
+    label: "Euros",
+    color: "var(--validate)",
   },
 } satisfies ChartConfig
 
 export const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-  { month: "June", desktop: 158, mobile: 190 },
-  { month: "Jul", desktop: 100, mobile: 250 },
-  { month: "Aug", desktop: 214, mobile: 273 },
-  { month: "Sep", desktop: 52, mobile: 143 },
-  { month: "Oct", desktop: 243, mobile: 120 },
-  { month: "Nov", desktop: 284, mobile: 140 },
-  { month: "Dec", desktop: 214, mobile: 100 },
+  { month: "Janvier", placement: 23756 },
+  { month: "Fevrier", placement: 12678 },
+  { month: "Mars", placement: 7643 },
+  { month: "Avril", placement: 14589 },
+  { month: "Mai", placement: 25637 },
+  { month: "Jun", placement: 13564 },
+  { month: "Jul", placement: 21978 },
+  { month: "Aug", placement: 35257 },
+  { month: "Sep", placement: 54976 },
+  { month: "Oct", placement: 42013 },
+  { month: "Nov", placement: 46790 },
+  { month: "Dec", placement: 32866 },
 ]
 
 export const totalAssets ={
     title:'Portefeuille',
-    asset:'32.866,92',
+    asset:32866.92,
     devise:'€',
     badge:{
-      icon:TrendingUp,
-      data:'+ 2,74%'
+      icon:TrendingDown ,
+      data:'- 2,74%'
     }
 };
 
 export const assets =[
 {
   title:'Bitcoin',
-  asset:'12.866,76',
-  devise:'BTC',
+  asset:{
+    euro: 12459.76,
+    crypto:0.12
+  },
+  devise:{
+    euro:'€',
+    crypto:'BTC'
+  },
+  badge:{
+      icon:TrendingUp ,
+      data:'+ 3,86%'
+    }
+
+},
+{
+  title:'Ethereum',
+  asset:{
+    euro: 10764.67,
+    crypto:3.24
+  },
+  devise:{
+    euro:'€',
+    crypto:'ETH'
+  },
   badge:{
       icon:TrendingUp,
-      data:'+ 3,86%'
+      data:'+ 5,39%'
+    }
+
+},
+{
+  title:'Solana',
+  asset:{
+    euro: 9642.49,
+    crypto:65
+  },
+  devise:{
+    euro:'€',
+    crypto:'SOL'
+  },
+  badge:{
+      icon:TrendingDown ,
+      data:'- 1,42%'
     }
 
 }

@@ -36,7 +36,7 @@ export const general = [
     icon: CircleDollarSign,
   },
   {
-    title: "Prêts",
+    title: "Factures",
     url: "#",
     icon: FileText,
   },
