@@ -20,8 +20,7 @@ const Assets = () => {
             const IconComponent = badge.icon;
             const data = badge.data;
             return (
-            <div className="py-6 px-4 w-full" key={`${title}`}>
-                <div className="relative">
+                <div className="relative" key={`${title}`}>
                 <Card className="relative w-full h-60">
                     <CardHeader>
                     <CardDescription>
@@ -46,7 +45,6 @@ const Assets = () => {
                     </CardFooter>
                 </Card>
             </div>
-        </div>
         )
         })}
         

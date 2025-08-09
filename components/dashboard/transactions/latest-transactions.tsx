@@ -7,9 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Invoices from '../cards/invoices';
+import Transactions from './transactions';
+import { Separator } from '@/components/ui/separator';
 
-const LatestInvoices = () => {
+const LatestTransactions = () => {
   return (
     <>
         <Card className='mt-3 lg:mt-0'>
@@ -17,17 +18,13 @@ const LatestInvoices = () => {
                 <CardTitle className='text-xl'>Dernières Transactions - 2025</CardTitle>
                 <CardDescription>Jan - Dec</CardDescription>
             </CardHeader>
+            <Separator/>
             <CardContent className='flex flex-col justify-evenly h-full gap-1'>
-                <Invoices />
-                <Invoices />
-                <Invoices />
-                <Invoices />
-                <Invoices />
-                <Invoices />
+                <Transactions />
             </CardContent>
         </Card>
     </>
   )
 }
 
-export default LatestInvoices
+export default LatestTransactions

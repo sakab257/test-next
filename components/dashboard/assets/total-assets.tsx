@@ -19,7 +19,6 @@ const TotalAssets = () => {
   const {title, asset, devise, badge} = totalAssets;
   const {icon: IconComponent, data} = badge;
   return (
-    <div className="py-6 px-4">
       <div className="relative">
         {/* Main card */}
         <Card className="relative w-full h-60">
@@ -45,7 +44,6 @@ const TotalAssets = () => {
           </CardFooter>
         </Card>
       </div>
-    </div>
   )
 }
 

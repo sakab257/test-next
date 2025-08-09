@@ -1,10 +1,10 @@
 'use client'
-import Assets from '@/components/dashboard/cards/assets'
-import TotalAssets from '@/components/dashboard/cards/total-assets'
+import Assets from '@/components/dashboard/assets/assets'
+import TotalAssets from '@/components/dashboard/assets/total-assets'
 import { DashboardChart } from '@/components/dashboard/charts/dashboard-chart'
 import React, { useEffect, useState } from 'react'
 import Loading from './loading'
-import LatestInvoices from '@/components/dashboard/invoices/latest-invoices'
+import LatestTransactions from '@/components/dashboard/transactions/latest-transactions'
 
 const Dashboard = () => {
   const [waiting, setWaiting] = useState(true);
@@ -25,14 +25,14 @@ const Dashboard = () => {
     <>
     
     <div className='h-full w-full flex flex-1 flex-col'>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full p-2 gap-x-3 gap-y-3'>
         <TotalAssets/>
         <Assets />
         
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-2 w-full h-full mb-2 px-3 gap-7'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 w-full h-full mb-2 px-3 gap-x-3'>
         <DashboardChart />
-        <LatestInvoices/>
+        <LatestTransactions />
       </div>
     </div>
     </>
