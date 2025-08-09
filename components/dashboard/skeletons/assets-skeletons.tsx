@@ -11,7 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 const AssetsSkeleton = () => {
   return (
     <>
-            <div className="py-6 px-4 w-full">
+            <div className=" w-full">
                     <div className="relative">
                     <Card className="relative w-full h-60">
                         <CardHeader>

@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setWaiting(false);
-    }, 300);
+    }, 200);
 
     return () => clearTimeout(timer); // Nettoyage
   }, []);

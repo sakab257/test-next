@@ -1,18 +1,11 @@
-'use client'
 import React from 'react'
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
-import { CartesianGrid, Line, LineChart, XAxis, YAxis } from 'recharts'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../ui/card'
+import { Card, CardContent, CardHeader } from '../../ui/card'
 import { Separator } from '../../ui/separator'
 import { Skeleton } from '../../ui/skeleton'
 
 const DashboardSkeleton = () => {
   return (
-    <Card className='lg:w-2/3 ml-3 mr-3 h-max'>
+    <Card className='h-max'>
         <CardHeader>
             <Skeleton className='w-[300px] h-[28px]'/>
             <Skeleton className='w-[60px] h-[20px]'/>
