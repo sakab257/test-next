@@ -17,32 +17,32 @@ export const general = [
   },
   {
     title: "Portefeuille",
-    url: "#",
+    url: "/wallet",
     icon: WalletMinimal,
   },
   {
     title: "Statistiques",
-    url: "#",
+    url: "/stats",
     icon: ChartLine,
   },
   {
     title: "Transactions",
-    url: "#",
+    url: "/transactions",
     icon: ArrowLeftRight,
   },
   {
     title: "Investissements",
-    url: "#",
+    url: "/placements",
     icon: CircleDollarSign,
   },
   {
     title: "Factures",
-    url: "#",
+    url: "/invoices",
     icon: FileText,
   },
   {
     title: "Rapports",
-    url: "#",
+    url: "/reports",
     icon: ChartPie,
   },
 ]

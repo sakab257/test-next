@@ -1,0 +1,45 @@
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import React from 'react'
+
+const page = () => {
+  return (
+    <>
+      <div className='w-full h-full grid grid-cols-1 lg:grid-cols-2'>
+        <div className='w-full h-full grid grid-rows-2'>
+          <div className='w-full h-full p-4'>
+            <Card className='h-full w-full bg-gradient-to-r from-background to-muted-foreground border-0 shadow-xl'>
+              <CardHeader>
+                <CardTitle>Test</CardTitle>
+                <CardDescription>tttest</CardDescription>
+              </CardHeader>
+              <CardContent></CardContent>
+              <CardFooter></CardFooter>
+            </Card>
+          </div>
+          <div className='w-full h-full p-4'>
+            <Card className='h-full w-full bg-gradient-to-r from-accent to-sidebar-ring border-0 shadow-xl'>
+              <CardHeader>
+                <CardTitle>Test</CardTitle>
+                <CardDescription>tttest</CardDescription>
+              </CardHeader>
+              <CardContent></CardContent>
+              <CardFooter></CardFooter>
+            </Card>
+          </div>
+        </div>
+        <div className='w-full h-full p-4'>
+          <Card className='h-full w-full bg-gradient-to-r from-accent to-sidebar-ring border-0 shadow-xl'>
+              <CardHeader>
+                <CardTitle>Test</CardTitle>
+                <CardDescription>tttest</CardDescription>
+              </CardHeader>
+              <CardContent></CardContent>
+              <CardFooter></CardFooter>
+            </Card>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default page
