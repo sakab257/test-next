@@ -5,14 +5,14 @@ import { Skeleton } from '../../ui/skeleton'
 
 const DashboardSkeleton = () => {
   return (
-    <Card className='h-max'>
+    <Card className='h-full'>
         <CardHeader>
             <Skeleton className='w-[300px] h-[28px]'/>
             <Skeleton className='w-[60px] h-[20px]'/>
         </CardHeader>
         <Separator/>
-        <CardContent className='w-full'>
-            <Skeleton className='min-h-[200px] h-[200px] md:h-[300px] w-full' />
+        <CardContent className='w-full h-full'>
+            <Skeleton className='h-full w-full' />
         </CardContent>
     </Card>
   )

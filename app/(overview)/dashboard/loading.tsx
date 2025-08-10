@@ -6,7 +6,7 @@ import LatestTransactionsSkeleton from '@/components/dashboard/skeletons/latest-
 const Loading = () => {
   return (
     <>
-    <div className='h-max w-full flex flex-1 flex-col'>
+    <div className='h-full w-full flex flex-1 flex-col'>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full p-2 gap-x-3 gap-y-3'>
         <AssetsSkeleton />
         <AssetsSkeleton />
