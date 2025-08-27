@@ -1,25 +1,47 @@
 import React from 'react'
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
+    CardContent,
   CardTitle,
 } from "@/components/ui/card";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { EllipsisVertical, ArrowDownToLine, ArrowUpFromLine, MoveUpRight, MoveDownLeft } from 'lucide-react';
+import { EllipsisVertical, ArrowDownLeft, ArrowUpRight, MoveUpRight, MoveDownLeft, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { latestTransactions } from '@/lib/fake-data';
 import clsx from 'clsx';
+import { Separator } from '@/components/ui/separator';
 
-const Transactions = () => {
+interface TransactionProps{
+    array: Array<{
+        avatar: string,
+        name: string,
+        amount: {
+            data: string,
+            devise: string
+        },
+        sent: boolean
+    }>
+}
+
+// interface TransactionProps extends Array<TransactionProps>{}
+
+const Transactions = ({array}:TransactionProps) => {
   return (
     <>
-        {latestTransactions.map((transaction,index)=>{
+        {array.map((transaction,index)=>{
             return(
-                <Card className='shadow-none border-0 py-1' key={index}>
-                    <CardHeader className='flex px-2 items-center'>
+                <Card className='shadow-none border-0 py-2' key={index}>
+                    <CardContent className='flex px-2 pt-2 items-center'>
                         <div className='flex flex-1 gap-2 items-center'>
                             <CardTitle>
                                 <Avatar>
@@ -41,8 +63,17 @@ const Transactions = () => {
                                 >{transaction.amount.data} {transaction.amount.devise} {transaction.sent ? <MoveUpRight className='ml-1 size-3.5'/> : <MoveDownLeft className='ml-1 size-3.5'/>}</span>
                             </CardDescription>
                         </div>
-                        <Button variant='ghost' size='icon'><EllipsisVertical className='size-5'/></Button>
-                    </CardHeader>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild><Button variant='ghost' size='icon'><EllipsisVertical className='size-5' /></Button></DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuItem><ArrowUpRight />Envoyer</DropdownMenuItem>
+                                <DropdownMenuItem><ArrowDownLeft />Demander</DropdownMenuItem>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem className='text-destructive'><Trash2 className='text-destructive'/>Supprimer</DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </CardContent>
+                    {index !== array.length - 1 && <Separator className='py-0' />}
                 </Card>
             )
         })}

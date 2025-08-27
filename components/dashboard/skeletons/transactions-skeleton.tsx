@@ -1,12 +1,4 @@
 import React from 'react'
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from '@/components/ui/button';
-import { EllipsisVertical } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const TransactionsSkeleton = () => {

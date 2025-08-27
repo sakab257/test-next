@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import Transactions from './transactions';
 import { Separator } from '@/components/ui/separator';
+import { latestTransactions } from '@/lib/fake-data';
 
 const LatestTransactions = () => {
   return (
@@ -20,7 +21,8 @@ const LatestTransactions = () => {
             </CardHeader>
             <Separator/>
             <CardContent className='flex flex-col justify-evenly h-full gap-1'>
-                <Transactions />
+            <Transactions array={latestTransactions} /> {/* Je sais pas pourquoi j'ai cette erreur là ...  */}
+            {/* Ok ça fonctionne bien mtn, c'était juste le extends dans le fichier 'transactions.tsx' qui posait problème */}
             </CardContent>
         </Card>
     </>

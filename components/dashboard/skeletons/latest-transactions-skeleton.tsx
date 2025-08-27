@@ -8,7 +8,7 @@ const LatestTransactionsSkeleton = () => {
   return (
     <Card>
         <CardHeader>
-            <Skeleton className='w-[300px] h-[28px]'/>
+            <Skeleton className='w-full h-[28px]'/>
             <Skeleton className='w-[60px] h-[20px]'/>
         </CardHeader>
         <Separator/>
