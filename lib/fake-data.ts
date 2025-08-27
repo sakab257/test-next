@@ -131,14 +131,14 @@ export const latestTransactions = [
     },
     sent:false
   },
-  {
-    avatar:'/avatar.png',
-    name:'Antoine GARCIA',
-    amount:{
-      data:'675.25',
-      devise:'€'
-    },
-    sent:true
-  },
+  // {
+  //   avatar:'/avatar.png',
+  //   name:'Antoine GARCIA',
+  //   amount:{
+  //     data:'675.25',
+  //     devise:'€'
+  //   },
+  //   sent:true
+  // },
 
 ]

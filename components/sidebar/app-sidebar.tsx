@@ -55,10 +55,10 @@ export function AppSidebar() {
               {help.map((link) => (
                 <SidebarMenuItem key={link.title}>
                   <SidebarMenuButton asChild>
-                    <a href={link.url}>
+                    <Link href={link.url}>
                       <link.icon />
                       <span>{link.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

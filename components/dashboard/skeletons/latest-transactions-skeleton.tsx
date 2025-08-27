@@ -18,7 +18,6 @@ const LatestTransactionsSkeleton = () => {
             <TransactionsSkeleton />
             <TransactionsSkeleton />
             <TransactionsSkeleton />
-            <TransactionsSkeleton />
         </CardContent>
     </Card>
   )

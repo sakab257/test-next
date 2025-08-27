@@ -20,7 +20,7 @@ const LatestTransactions = () => {
                 <CardDescription>Jan - Dec</CardDescription>
             </CardHeader>
             <Separator/>
-            <CardContent className='flex flex-col justify-evenly h-full gap-1'>
+            <CardContent className='flex flex-col justify-start h-full'>
             <Transactions array={latestTransactions} /> {/* Je sais pas pourquoi j'ai cette erreur là ...  */}
             {/* Ok ça fonctionne bien mtn, c'était juste le extends dans le fichier 'transactions.tsx' qui posait problème */}
             </CardContent>
